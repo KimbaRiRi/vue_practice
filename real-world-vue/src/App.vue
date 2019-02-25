@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <NavBar />
     <!-- <div id="nav">
       <router-link :to="{ name: 'event-list' }">List</router-link>|
       <router-link :to="{ name: 'event-show' }">Show Event #1</router-link>|
@@ -10,10 +10,10 @@
   </div>
 </template>
 <script>
-import Navbar from '@/components/Navbar.vue'
+import NavBar from '@/components/NavBar.vue'
 export default {
   components: {
-    Navbar
+    NavBar
   }
 }
 </script>

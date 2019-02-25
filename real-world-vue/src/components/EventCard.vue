@@ -47,4 +47,5 @@ export default {
 }
 .event-link {
   color: black;
+}
 </style>
