@@ -56,7 +56,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
 import Datepicker from 'vuejs-datepicker'
 export default {
   components: {
@@ -68,40 +67,12 @@ export default {
       times.push(i + ':00')
     }
     return {
-      event: this.createFreshEventObject(),
       times,
-      categories: this.$store.state.categories
-      // incrementBy: 1
+      categories: this.$store.state.categories,
+      event: this.createFreshEventObject()
     }
   },
-  // computed: {
-  //   ...mapGetters(['getEventById']),
-  //   ...mapState(['user', 'categories'])
-  // },
   methods: {
-    //mutation testing
-    // incrementCount() {
-    //   this.$store.commit('INCREMENT_COUNT', this.incrementBy)
-    // }
-    //action testing
-    // incrementCount() {
-    //   this.$store.dispatch('updateCount', this.incrementBy)
-    // }
-    createFreshEventObject() {
-      const user = this.$store.state.user
-      const id = Math.floor(Math.random() * 10000000)
-      return {
-        id: id,
-        category: '',
-        organizer: user,
-        title: '',
-        description: '',
-        location: '',
-        date: '',
-        time: '',
-        attendees: []
-      }
-    },
     createEvent() {
       this.$store
         .dispatch('createEvent', this.event)
@@ -113,9 +84,24 @@ export default {
           this.event = this.createFreshEventObject()
         })
         .catch(() => {
-          console.log('There was a problem creating your event.')
+          console.log('There was a problem creating your event')
         })
-      this.event = this.createFreshEventObject()
+    },
+    createFreshEventObject() {
+      const user = this.$store.state.user
+      const id = Math.floor(Math.random() * 10000000)
+      return {
+        id: id,
+        user: user,
+        category: '',
+        organizer: user,
+        title: '',
+        description: '',
+        location: '',
+        date: '',
+        time: '',
+        attendees: []
+      }
     }
   }
 }
