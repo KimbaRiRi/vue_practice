@@ -19,7 +19,6 @@ export const mutations = {
     )
   }
 }
-
 export const actions = {
   add({ commit }, notification) {
     commit('PUSH', notification)

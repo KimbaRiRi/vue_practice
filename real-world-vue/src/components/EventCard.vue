@@ -10,6 +10,7 @@
     </div>
   </router-link>
 </template>
+
 <script>
 export default {
   props: {
@@ -34,5 +35,7 @@ export default {
 }
 .event-link {
   color: black;
+  text-decoration: none;
+  font-weight: 100;
 }
 </style>
