@@ -18,9 +18,9 @@
 
     <h2>
       Attendees
-      <span class="badge -fill-gradient">
-        {{ event.attendees ? event.attendees.length : 0 }}
-      </span>
+      <span class="badge -fill-gradient">{{
+        event.attendees ? event.attendees.length : 0
+      }}</span>
     </h2>
     <ul class="list-group">
       <li
@@ -39,7 +39,12 @@ import NProgress from 'nprogress' // <--- Include the progress bar
 import store from '@/store/store' // <--- Include our Vuex store
 
 export default {
-  props: ['id'],
+  props: {
+    event: {
+      type: Object,
+      required: true
+    }
+  },
   beforeRouteEnter(routeTo, routeFrom, next) {
     NProgress.start() // Start the progress bar
     store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
