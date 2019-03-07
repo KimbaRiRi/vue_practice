@@ -5,6 +5,8 @@ import EventList from './views/EventList.vue'
 import EventShow from './views/EventShow.vue'
 import NProgress from 'nprogress' // <--- include the library
 import store from '@/store/store'
+import NotFound from './views/NotFound.vue'
+import NetworkIssue from './pages/NetworkIssue.vue'
 
 Vue.use(Router)
 const router = new Router({
@@ -13,7 +15,13 @@ const router = new Router({
     {
       path: '/',
       name: 'event-list',
-      component: EventList
+      component: EventList,
+      props: route => ({
+        page: route.params.page,
+        perPage: route.params.perPage,
+        events: route.params.events,
+        eventTotal: route.params.eventTotal
+      })
     },
     {
       path: '/event/create',
@@ -26,12 +34,30 @@ const router = new Router({
       component: EventShow,
       props: true,
       beforeEnter(routeTo, routeFrom, next) {
-        // before this route is loaded
-        store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
-          routeTo.params.event = event
-          next()
-        })
+        store
+          .dispatch('event/fetchEvent', routeTo.params.id)
+          .then(event => {
+            routeTo.params.event = event
+            next()
+          })
+          .catch(() => next({ name: '404', params: { resource: 'event' } }))
       }
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: NotFound,
+      props: true // I added this so we can receive the param as a prop
+    },
+    {
+      path: '*',
+      redirect: { name: '404', params: { resource: 'page' } }
+      // I added this resource param here.
+    },
+    {
+      path: '/network-issue',
+      name: 'network-issue',
+      component: NetworkIssue
     }
   ]
 })
