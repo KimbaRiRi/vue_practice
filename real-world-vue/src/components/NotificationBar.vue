@@ -1,32 +1,29 @@
 <template>
-  <div class="notification-bar">
-    <p>{{ notification.message }}</p>
+  <div class="notification-container">
+    <NotificationBar
+      v-for="notification in notifications"
+      :key="notification.id"
+      :notification="notification"
+    />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import NotificationBar from '@/components/NotificationBar.vue'
+import { mapState } from 'vuex'
 export default {
-  data() {
-    return {
-      timeout: null
-    }
+  components: {
+    NotificationBar
   },
-  mounted() {
-    this.timeout = setTimeout(() => this.remove(this.notification), 5000)
-  },
-  props: {
-    notification: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: mapActions('notification', ['remove'])
+  computed: mapState('notification', ['notifications'])
 }
 </script>
 
 <style scoped>
-.notification-bar {
-  margin: 1em 0 1em;
+.notification-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding-right: 40px;
 }
 </style>

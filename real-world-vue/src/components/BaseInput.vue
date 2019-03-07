@@ -1,14 +1,24 @@
 <template>
   <div>
     <label v-if="label">{{ label }}</label>
-    <input v-model="event.title" type="text" placeholder="Add an event title" />
+    <input :value="value" @input="updateValue" v-bind="$attrs" />
   </div>
 </template>
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
-    label: String
+    label: {
+      type: String,
+      default: ''
+    },
+    value: [String, Number]
+  },
+  methods: {
+    updateValue(event) {
+      this.$emit('input', event.target.value)
+    }
   }
 }
 </script>

@@ -16,12 +16,7 @@ const router = new Router({
       path: '/',
       name: 'event-list',
       component: EventList,
-      props: route => ({
-        page: route.params.page,
-        perPage: route.params.perPage,
-        events: route.params.events,
-        eventTotal: route.params.eventTotal
-      })
+      props: true
     },
     {
       path: '/event/create',
@@ -40,7 +35,13 @@ const router = new Router({
             routeTo.params.event = event
             next()
           })
-          .catch(() => next({ name: '404', params: { resource: 'event' } }))
+          .catch(error => {
+            if (error.response && error.response.status == 404) {
+              next({ name: '404', params: { resource: 'event' } })
+            } else {
+              next({ name: 'network-issue' })
+            }
+          })
       }
     },
     {

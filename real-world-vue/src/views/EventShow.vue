@@ -34,31 +34,13 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
-import NProgress from 'nprogress' // <--- Include the progress bar
-import store from '@/store/store' // <--- Include our Vuex store
-
 export default {
   props: {
     event: {
       type: Object,
       required: true
     }
-  },
-  beforeRouteEnter(routeTo, routeFrom, next) {
-    NProgress.start() // Start the progress bar
-    store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
-      NProgress.done() // When the action is done complete progress bar
-      next() // Only once this is called does the navigation continue
-    })
-  },
-  created() {
-    this.fetchEvent(this.id)
-  },
-  computed: mapState({
-    event: state => state.event.event
-  }),
-  methods: mapActions('event', ['fetchEvent'])
+  }
 }
 </script>
 <style scoped>

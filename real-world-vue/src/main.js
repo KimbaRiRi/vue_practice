@@ -4,10 +4,10 @@ import camelCase from 'lodash/camelCase'
 import App from './App.vue'
 import router from './router'
 import store from './store/store'
-import BaseIcon from '@/components/BaseIcon'
+// import BaseIcon from '@/components/BaseIcon'
 import 'nprogress/nprogress.css'
 
-Vue.component('BaseIcon', BaseIcon)
+// Vue.component('BaseIcon', BaseIcon)
 
 Vue.config.productionTip = false
 
