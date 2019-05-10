@@ -1,0 +1,245 @@
+/*
+ ** dot env
+ */
+require("dotenv").config();
+
+module.exports = {
+    /*
+     ** Universal-mode
+     */
+    mode: "universal",
+    /*
+     ** Headers of the page
+     */
+    head: {
+        title: "Space Cat | spacecat.surge.sh",
+        meta: [
+            { charset: "utf-8" },
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1.0"
+            },
+            {
+                vmid: "og:description",
+                property: "og:description",
+                content: "Portfolio made with Vue.js and Nuxt.js"
+            },
+            {
+                vmid: "og:image",
+                property: "og:image",
+                content: "http://spacecat.surge.sh/images/og_image.png"
+            },
+            {
+                vmid: "og:image:secure_url",
+                property: "og:image:secure_url",
+                content: "https://moso.io/images/og_image.png"
+            },
+            {
+                vmid: "og:image:width",
+                property: "og:image:width",
+                content: "700"
+            },
+            {
+                vmid: "og:image:height",
+                property: "og:image:height",
+                content: "500"
+            },
+            {
+                vmid: "og:title",
+                property: "og:title",
+                content: "Gyuri | spacecat.surge.sh"
+            },
+            { vmid: "og:type", property: "og:type", content: "website" },
+            {
+                vmid: "og:url",
+                property: "og:url",
+                content: "http://spacecat.surge.sh"
+            },
+            {
+                name: "description",
+                name: "description",
+                content: "Portfolio made with Vue.js and Nuxt.js"
+            },
+            { name: "author", content: "Space Cat AKA Gyuri" },
+            { name: "mobile-web-app-capable", content: "yes" },
+            { name: "apple-mobile-web-app-capable", content: "yes" },
+            { name: "application-name", content: "Gyuri | spacecat.surge.sh" },
+            { name: "msapplication-TileColor", content: "#263238" },
+            {
+                name: "msapplication-TileImage",
+                content: "/images/static/favicon/ms-icon-144x144.png"
+            },
+            { name: "theme-color", content: "#263238" }
+        ],
+        link: [
+            {
+                rel: "apple-touch-icon",
+                sizes: "57x57",
+                href: "/images/static/favicon/apple-icon-57x57.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "60x60",
+                href: "/images/static/favicon/apple-icon-60x60.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "72x72",
+                href: "/images/static/favicon/apple-icon-72x72.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "76x76",
+                href: "/images/static/favicon/apple-icon-76x76.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "114x114",
+                href: "/images/static/favicon/apple-icon-114x114.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "120x120",
+                href: "/images/static/favicon/apple-icon-120x120.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "144x144",
+                href: "/images/static/favicon/apple-icon-144x144.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "152x152",
+                href: "/images/static/favicon/apple-icon-152x152.png"
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "180x180",
+                href: "/images/static/favicon/apple-icon-180x180.png"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "16x16",
+                href: "/images/static/favicon/favicon-16x16.png"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+                href: "/images/static/favicon/favicon-32x32.png"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "96x96",
+                href: "/images/static/favicon/favicon-96x96.png"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "192x192",
+                href: "/images/static/favicon/android-icon-192x192.png"
+            },
+            { rel: "manifest", href: "/manifest.json" }
+        ]
+    },
+    /*
+     ** CSS
+     */
+    css: [
+        "~/node_modules/flexgrid.io/css/flexgrid-tailwind.css",
+        "~/assets/sass/app.scss"
+    ],
+    /*
+     ** Customize the progress bar color
+     */
+    loading: {
+        color: "#37474F",
+        failedColor: "#F44336",
+        height: "3px"
+    },
+    /*
+     ** Modules
+     */
+    modules: [
+        "@nuxtjs/axios",
+        ["@nuxtjs/dotenv", { systemvars: true }],
+        "@nuxtjs/router",
+        "nuxt-webfontloader"
+    ],
+    /*
+     ** axios config
+     */
+    // axios: {
+    //     proxy: true
+    // },
+
+    // proxy: {
+    //     '/api/': { target: 'http://api.spacecat.is', pathRewrite: {'^/api/': ''} }
+    // },
+    /*
+     ** Routes
+     */
+    generate: {
+        fallback: true,
+        routes: []
+    },
+    /*
+     ** Webfontloader
+     */
+    webfontloader: {
+        google: {
+            families: ["Source+Sans+Pro:300,400,600"]
+        }
+    },
+    /*
+     ** Build configuration
+     */
+    build: {
+        /*
+         ** Run ESLint on save
+         */
+        extend(config, { isDev, isClient }) {
+            if (isDev && isClient) {
+                config.module.rules.push({
+                    enforce: "pre",
+                    test: /\.(js|vue)$/,
+                    loader: "eslint-loader",
+                    exclude: /(node_modules)/
+                });
+            }
+            vendor: ["pixi.js", "three.js"];
+        }
+    },
+    /*
+     ** Plugins
+     */
+    plugins: [
+        "~/plugins/Ripple",
+        { src: "~/plugins/vue-masonry", ssr: false },
+        {
+            src: "~/plugins/pixi",
+            ssr: false
+        },
+        {
+            src: "~/plugins/three",
+            ssr: false
+        }
+    ],
+    /*
+     ** Netlify environment variables
+     */
+    env: {
+        titles: process.env.titles,
+        devicons: process.env.devicons,
+        skills: process.env.skills,
+        profiles: process.env.profiles,
+        infolists: process.env.infolists,
+        tools: process.env.tools,
+        projects: process.env.projects,
+        smallprojects: process.env.smallprojects,
+        experiences: process.env.experiences,
+        educations: process.env.educations
+    }
+};

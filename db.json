@@ -1,0 +1,153 @@
+{
+  "events": [
+    {
+      "id": 5928101,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Cat Cabaret",
+      "description": "Yay felines!",
+      "location": "Meow Town",
+      "date": "2019-01-03T21:54:00.000Z",
+      "time": "2:00",
+      "attendees": []
+    },
+    {
+      "id": 8419988,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Kitty Cluster",
+      "description": "Yay cats!",
+      "location": "Catlandia",
+      "date": "2019-01-31T22:09:00.000Z",
+      "time": "7:00",
+      "attendees": []
+    },
+    {
+      "id": 4582797,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Puppy Parade",
+      "description": "Yay pups!",
+      "location": "Puptown ",
+      "date": "2019-02-02T23:27:00.000Z",
+      "time": "1:00",
+      "attendees": []
+    },
+    {
+      "id": 6134793,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Gyuri Kim"
+      },
+      "title": "ddd",
+      "description": "fff",
+      "location": "sydney",
+      "date": "2019-02-28T03:07:00.000Z",
+      "time": "6:00",
+      "attendees": []
+    },
+    {
+      "id": 7462761,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Gyuri Kim"
+      },
+      "title": "test1",
+      "description": "test1",
+      "location": "sydney",
+      "date": "2019-02-28T06:22:00.000Z",
+      "time": "21:00",
+      "attendees": []
+    },
+    {
+      "id": 3450432,
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Gyuri Kim"
+      },
+      "title": "test111",
+      "description": "test111",
+      "location": "Seoul",
+      "date": "2019-02-28T06:23:00.000Z",
+      "time": "24:00",
+      "attendees": []
+    },
+    {
+      "id": 6323443,
+      "user": {
+        "user": {
+          "id": "abc123",
+          "name": "Kimmmmmmmy"
+        }
+      },
+      "category": "community",
+      "organizer": {
+        "user": {
+          "id": "abc123",
+          "name": "Kimmmmmmmy"
+        }
+      },
+      "title": "test",
+      "description": "test",
+      "location": "test",
+      "date": "2019-02-28T10:45:00.000Z",
+      "time": "22:00",
+      "attendees": []
+    },
+    {
+      "id": 6579191,
+      "user": {
+        "user": {
+          "id": "abc123",
+          "name": "Kimmmmmmmy"
+        }
+      },
+      "category": "housing",
+      "organizer": {
+        "user": {
+          "id": "abc123",
+          "name": "Kimmmmmmmy"
+        }
+      },
+      "title": "test",
+      "description": "test",
+      "location": "test",
+      "date": "2019-02-28T10:47:00.000Z",
+      "time": "21:00",
+      "attendees": []
+    },
+    {
+      "id": 6444175,
+      "user": {
+        "id": "abc123",
+        "name": "Kimmmmmmmy"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Kimmmmmmmy"
+      },
+      "title": "dfff",
+      "description": "sssdf",
+      "location": "ssdfs",
+      "date": "2019-03-14T23:20:00.000Z",
+      "time": "5:00",
+      "attendees": []
+    }
+  ]
+}
