@@ -1,26 +1,24 @@
 <template>
   <div id="app" class="application">
-    <!-- <div class="container:fluid"></div> -->
-    <div class="transition-panel"></div>
-    <app-header class="stagger"/>
+    <NavBar class="stagger"/>
     <nuxt/>
-    <app-footer class="stagger"/>
+    <Footer class="stagger"/>
   </div>
 </template>
 
 <script>
-import AppHeader from "~/components/header.vue";
-import AppFooter from "~/components/footer.vue";
+import NavBar from "~/components/NavBar.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    AppHeader,
-    AppFooter
+    NavBar,
+    Footer
   },
   methods: {},
   computed: {}
 };
 </script>
 <style lang="scss">
-@import "./assets/sass/variables";
+@import "./assets/sass/base.variables";
 </style>

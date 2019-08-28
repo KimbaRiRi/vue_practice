@@ -2,12 +2,22 @@
  * Base CSS for the moso.io vue app
  * Licensed under MIT (https://github.com/moso/moso-vue/blob/master/LICENSE)
  */
-@import 'variables';
-@import 'base';
 
-@import 'layout';
-@import 'utilities';
+@charset 'UTF-8';
 
-@import 'components/widget';
-@import 'components/button';
-@import 'components/ripple';
+@import "utilities.mixins";
+@import "utilities.keyframes";
+
+@import "base.variables";
+@import "base.reset";
+@import "base.base";
+@import "base.typography";
+
+@import "page.nav";
+@import "page.header";
+@import "page.landing";
+@import "page.work";
+@import "page.footer";
+@import "base.fonts";
+
+@import "components/ripple";

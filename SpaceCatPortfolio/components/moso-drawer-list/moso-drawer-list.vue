@@ -1,27 +1,27 @@
 <template>
-    <div class="drawer-list">
-        <ul id="drawerMenu">
-            <slot></slot>
-        </ul>
-    </div>
+  <div class="drawer-list">
+    <ul id="drawerMenu">
+      <slot></slot>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
-    mounted() {
-        //
-    },
-}
+  mounted() {
+    //
+  }
+};
 </script>
 <style lang="scss">
-@import './assets/sass/variables';
+@import "./assets/sass/base.variables";
 
 .drawer-list {
-    margin-top: 20px;
+  margin-top: 20px;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
 }
 </style>

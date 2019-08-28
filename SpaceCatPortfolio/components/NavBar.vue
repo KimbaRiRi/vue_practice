@@ -1,7 +1,9 @@
 
     
 <template>
-  <header class="header"></header>
+  <div class="topbar">
+    <div></div>
+  </div>
 </template>
 
 <script>
