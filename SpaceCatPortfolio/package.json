@@ -27,7 +27,7 @@
         "vue": "^2.6.10",
         "vue-masonry": "^0.11.7",
         "vue-no-ssr": "^1.1.1",
-        "gsap": "^2.0.1",
+        "gsap": "^3.6.0",
         "pixi.js": "^4.7.0",
         "smooth-scrolling": "^2.3.11",
         "three": "^0.95.0",
