@@ -30,7 +30,7 @@
         "gsap": "^2.0.1",
         "pixi.js": "^4.7.0",
         "smooth-scrolling": "^2.3.11",
-        "three": "^0.95.0",
+        "three": "^0.137.0",
         "scrollmagic": "^2.0.5",
         "url-parse": "^1.4.3",
         "jquery": "^3.3.1"
